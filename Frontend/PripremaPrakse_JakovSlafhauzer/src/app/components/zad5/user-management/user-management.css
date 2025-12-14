@@ -1,0 +1,64 @@
+.user-management-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #0f93ff;
+  border-radius: 8px;
+  background-color: #7ebff8;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+th,
+td {
+  border: 1px solid #0f93ff;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+th {
+  background-color: #7ebff8;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.form-field input {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  align-self: flex-start;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.error {
+  color: #c62828;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.error-message {
+  color: #c62828;
+  margin-bottom: 1rem;
+}

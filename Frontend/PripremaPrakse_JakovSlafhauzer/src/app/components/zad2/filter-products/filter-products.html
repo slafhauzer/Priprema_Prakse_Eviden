@@ -1,0 +1,67 @@
+<div class="filter-products-container">
+  <h2>Filter proizvoda</h2>
+
+  <div class="search-box">
+    <label for="search">Pretraži po nazivu:</label>
+    <input
+      id="search"
+      type="text"
+      [(ngModel)]="searchTerm"
+      placeholder="Upiši naziv proizvoda..."
+    />
+  </div>
+
+  <div class="category-box">
+    <label for="category">Kategorija:</label>
+    <select id="category" [(ngModel)]="selectedCategory">
+      <option *ngFor="let category of categories" [value]="category">
+        {{ category }}
+      </option>
+    </select>
+  </div>
+
+  <div class="price-range">
+    <div>
+      <label for="minPrice">Minimalna cijena:</label>
+      <input
+        id="minPrice"
+        type="number"
+        [(ngModel)]="minPrice"
+        placeholder="od"
+      />
+    </div>
+    <div>
+      <label for="maxPrice">Maksimalna cijena:</label>
+      <input
+        id="maxPrice"
+        type="number"
+        [(ngModel)]="maxPrice"
+        placeholder="do"
+      />
+    </div>
+  </div>
+
+  <div class="sort-box">
+    <label for="sort">Sortiraj po:</label>
+    <select id="sort" [(ngModel)]="sortOption">
+      <option value="none">Bez sortiranja</option>
+      <option value="nameAsc">Naziv (A-Ž)</option>
+      <option value="nameDesc">Naziv (Ž-A)</option>
+      <option value="priceAsc">Cijena (najniža prvo)</option>
+      <option value="priceDesc">Cijena (najviša prvo)</option>
+    </select>
+  </div>
+
+  <div *ngIf="filteredProducts.length > 0; else noProducts">
+    <ul>
+      <li *ngFor="let product of filteredProducts">
+        <strong>{{ product.name }}</strong>
+        <span> – {{ product.category }} – {{ product.price }} €</span>
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #noProducts>
+    <p class="no-products">Nema proizvoda za prikaz.</p>
+  </ng-template>
+</div>

@@ -1,0 +1,78 @@
+<div class="user-management-container">
+  <h2>Upravljanje korisnicima</h2>
+
+  <!-- Dohvat stanja -->
+  <div *ngIf="isLoading">Učitavanje korisnika...</div>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+  <!-- Tablica korisnika -->
+  <table *ngIf="!isLoading && users.length > 0; else noUsers">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Ime</th>
+        <th>Email</th>
+        <th>Telefon</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noUsers>
+    <p>Nema korisnika za prikaz.</p>
+  </ng-template>
+
+  <hr />
+
+  <!-- Forma za dodavanje novog korisnika -->
+  <h3>Dodaj novog korisnika</h3>
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="user-form">
+    <!-- NAME -->
+    <div class="form-field">
+    <label for="name">Ime *</label>
+    <input id="name" type="text" formControlName="name" />
+
+    <div class="error" *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+        <div *ngIf="name?.errors?.['required']">
+        Ime je obavezno.
+        </div>
+        <div *ngIf="name?.errors?.['minlength']">
+        Ime mora imati barem 3 znaka.
+        </div>
+    </div>
+    </div>
+
+    <!-- EMAIL -->
+    <div class="form-field">
+    <label for="email">Email *</label>
+    <input id="email" type="email" formControlName="email" />
+
+    <div class="error" *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+        <div *ngIf="email?.errors?.['required']">
+        Email je obavezan.
+        </div>
+        <div *ngIf="email?.errors?.['email']">
+        Unesite ispravan email.
+        </div>
+    </div>
+    </div>
+
+
+    <!-- Phone -->
+    <div class="form-field">
+      <label for="phone">Telefon (opcionalno)</label>
+      <input id="phone" type="text" formControlName="phone" />
+    </div>
+
+    <!-- Submit -->
+    <button type="submit">Dodaj korisnika</button>
+  </form>
+</div>

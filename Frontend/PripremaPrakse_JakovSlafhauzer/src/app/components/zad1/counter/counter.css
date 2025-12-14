@@ -1,0 +1,26 @@
+.counter-container {
+  max-width: 250px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+  color: black;
+  background-color: #f9f9f9;
+}
+
+.counter-value {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.counter-buttons button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.counter-buttons button:hover {
+  background-color: #f1f99f;
+}
