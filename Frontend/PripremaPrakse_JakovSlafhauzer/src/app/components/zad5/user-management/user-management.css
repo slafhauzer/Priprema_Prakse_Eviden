@@ -1,10 +1,11 @@
 .user-management-container {
+  font-size: 1.2em;
   max-width: 800px;
   margin: 2rem auto;
   padding: 1.5rem;
-  border: 1px solid #0f93ff;
+  border: 1px solid #299bf9;
   border-radius: 8px;
-  background-color: #7ebff8;
+  background-color: #91c9fa;
 }
 
 table {

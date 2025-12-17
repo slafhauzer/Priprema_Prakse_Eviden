@@ -1,0 +1,21 @@
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    border-bottom: 3px solid #ddddddb2;
+    margin-bottom: 20px;
+}
+
+.nav a {
+    font-size: 1.4em;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: #222;
+}
+
+.nav a.active {
+    background: #222;
+    color: white;
+}

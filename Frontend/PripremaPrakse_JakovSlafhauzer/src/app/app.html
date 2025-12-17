@@ -1,20 +1,19 @@
-<h1>Priprema za praksu – Frontend dio</h1>
+<nav class="nav">
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    Home
+  </a>
 
-<section>
-  <h2>Zadatak 1 – Brojač</h2>
-  <app-counter></app-counter>
-</section>
+  <a routerLink="/counter" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    Counter
+  </a>
 
-<hr />
+  <a routerLink="/filter-products" routerLinkActive="active">
+    Filter products
+  </a>
 
-<section>
-  <h2>Zadaci 2–4 – Filter proizvoda</h2>
-  <app-filter-products></app-filter-products>
-</section>
+  <a routerLink="/user-management" routerLinkActive="active">
+    User management
+  </a>
+</nav>
 
-<hr />
-
-<section>
-  <h2>Zadatak 5 – User management</h2>
-  <app-user-management></app-user-management>
-</section>
+<router-outlet></router-outlet>
