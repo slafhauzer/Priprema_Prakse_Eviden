@@ -1,4 +1,4 @@
-package org.ImePrezime.praksa.zad1;
+package org.JakovSlafhauzer.praksa.zad1;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
